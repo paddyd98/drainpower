@@ -1,0 +1,107 @@
+\documentclass[10pt]{extarticle} % Use extarticle class to allow more font sizes, specifically 9pt CAREFULL!!! Titlepage currently changes font too
+\usepackage{booktabs}
+
+\usepackage{eso-pic}
+
+
+\usepackage[T1]{fontenc} % Use T1 font encoding
+\usepackage[english]{babel} % Set the language to English
+%\usepackage[utf8x]{inputenc} % Uncomment if you need to use utf8x input encoding
+\usepackage{tikz}
+
+\usepackage{datetime} % Use datetime package to format the date
+\renewcommand{\today}{\the\day.\the\month.\the\year} % Change the format of \today to "day.month.year"
+
+\usepackage{titlesec} % Use titlesec package to customize sections
+
+\usepackage[style=ieee]{biblatex} % Use biblatex package with ieee style for bibliographies
+\addbibresource{Framework/references.bib}
+\usepackage{csquotes} % Use csquotes package for context-sensitive quotation facilities
+
+\usepackage{graphicx} % Use graphicx package to insert images
+\usepackage{wrapfig}
+\usepackage{color}
+
+\parskip 4.2pt  % Set the space between paragraphs
+
+\usepackage[a4paper, portrait, left=2.5cm,right=2.5cm,top=2.5cm,bottom=3.5cm]{geometry} % Set the page layout
+
+
+\renewcommand{\baselinestretch}{1.5}  % Set the line spacing to 1.5
+\usepackage{parskip} % Use parskip package to remove paragraph indentation
+\usepackage[font=sf]{caption} % Use caption package with sf font
+ 
+\usepackage{amsmath} % Use amsmath package for advanced math typesetting
+\usepackage{amssymb} % Use amssymb package for additional math symbols
+\usepackage{siunitx} % Use siunitx package for consistent typesetting of SI units
+\usepackage{verbatim} % Use verbatim package for verbatim output
+\usepackage{hyperref} % Use hyperref package for clickable links
+\usepackage{xcolor}
+\usepackage[]{pdfpages} % Use pdfpages package to include PDFs in the document
+
+\captionsetup[figure]{labelformat=default}
+
+
+\usepackage{multicol}
+\usepackage{fontspec}
+\setmainfont{Fira Sans}
+%Make sure you have the compiler "XeLaTeX" activated on your settings for your LaTeX document in order to see the font 
+
+%------------------Color Set--------------------------
+\definecolor{Black}{HTML}{000000}
+\definecolor{LightGreen}{HTML}{80afb0}
+\definecolor{MediumGreen}{HTML}{497878} 
+\definecolor{DarkGreen}{HTML}{005e60}
+\definecolor{LightGray}{gray}{.94}
+\definecolor{DarkGray}{gray}{.172}
+         % Blue
+
+
+%------------------Section Default Setting-------------
+\titleformat*{\section}{\color{DarkGreen}\normalfont\bfseries\Huge}
+\titleformat*{\subsection}{\color{MediumGreen}\normalfont\bfseries\LARGE}
+\titleformat*{\subsubsection}{\color{LightGreen}\normalfont\bfseries\Large}
+
+\let\oldtextbf\textbf
+\renewcommand{\textbf}[1]{\textcolor{DarkGreen}{\oldtextbf{#1}}}
+
+\tolerance=1
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000
+
+%%% page formatting
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{DarkGreen}\leaders\hrule height \headrulewidth\hfill}}
+\fancyhead[L]{\textcolor{DarkGreen}{\docSubject}}
+\fancyhead[R]{\textcolor{DarkGreen}{\docTask}}
+\fancyfoot[C]{
+\begin{tikzpicture}[remember picture,overlay] \node[anchor=south east, yshift=-1.5mm, xshift=1.5mm] at (current page.south east) {\includegraphics[height=29mm]{Framework/banner.png}};
+\end{tikzpicture}
+\textcolor{DarkGreen}{\thepage}
+}
+
+\setcounter{tocdepth}{2}
+\AddToHook{cmd/section/before}{\clearpage}
+
+%%%
+
+\begin{document}
+\include{Framework/Inputs}
+\include{Framework/Titlepage}
+\include{Framework/About}
+
+
+\tableofcontents %comment if it should not be shown
+
+
+\include{Chapters/1_Introduction}
+\include{Chapters/2_Mainpart}
+
+\printbibliography
+
+%\include{Chapters/Annex}
+
+\end{document}
