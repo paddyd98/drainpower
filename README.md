@@ -14,10 +14,10 @@ This project was not just a technical exercise but also a complete business prop
 
 This repository contains the core components of the DrainPower project:
 
-* **`[code/drainpower_simulation.ipynb]`(./code/drainpower_simulation.ipynb)**: The Python notebook (detailed below) used to model the thermodynamic performance of the heat pump.
-* **`[report/DrainPower_Final_Report.pdf]`(./report/DrainPower_Final_Report.pdf)**: The final project report, which includes the technical analysis, market research, and business plan.
-* **`[presentation/DrainPower_Final_Presentation.pptx]`(./presentation/DrainPower_Final_Presentation.pptx)**: The final presentation and pitch deck for the project.
-* **`[report/latex/]`(./report/latex/)**: The source LaTeX files for the final report.
+* The Python notebook (detailed below) used to model the thermodynamic performance of the heat pump.
+* The final project report, which includes the technical analysis, market research, and business plan.
+* The final presentation and pitch deck for the project.
+* The source LaTeX files for the final report.
 
 ---
 
